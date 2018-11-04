@@ -1,0 +1,70 @@
+<!DOCTYPE - html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>English for my son</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="understart" class="container-fluid">
+        <button type="button" id="start" class="btn">Start</button>
+    </div>
+    
+    <div id="new" class='container-fluid' hidden=true>
+        <button type='button' id='learnWords' class='btn btn-link lesson'>Учить слова</button>
+        <button type='button' id='testYourSelf' class='btn btn-link lesson'>Пройти тест</button>
+<!--        <button type='button' id='les3' class='btn btn-link lesson'>Lesson 3</button>-->
+    </div>
+    
+    <div id="congrats" class="container-fluid" hidden=true>
+        <p id="congratsWords">Урок №1 закончен.</p>
+        
+        <div id="count" class="container-fluid">
+            <p>Ты правильно перевёл </p>
+            <p id="result"></p> 
+            <p> из </p>
+            <p id="howManyWords"></p>
+            <p> слов </p>
+        </div>
+        
+        <p id="home" class='btn btn-link'>На главную</p>
+    
+    </div>
+        
+    <div id="learn" hidden="true">
+        <div id="back">Пройти тест</div>
+    </div>
+    
+    <div id="testPage" class="container-fluid" hidden=true>
+        <h1>Test yourself</h1>
+        <br>
+        <h3 id="subject">Verbs<br>(глаголы)</h3>
+        <br>
+        <h4>Переведи слова:</h4>
+        <div id="words" class="container-fluid">
+            <p id="questWord"></p>
+            <div id="translate" class="container-fluid">
+                <input type="text" id="translateInput" placeholder="введи перевод" disabled>
+                <div id="empty" hidden="true">Нужно ввести перевод</div>
+                <button type="submit" id="trButton" class="btn btn-light"><b>Проверить</b></button>
+            </div>
+            <div id="resultTrue" class="container-fluid" hidden>Верно!</div>
+            <div id="resultFalse" class="container-fluid" hidden>Не верно!</div>
+            
+        </div>
+        <div id="statusbar"></div>
+        
+    </div>
+    
+    
+    
+    
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>

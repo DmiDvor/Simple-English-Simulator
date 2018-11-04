@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Charmonman|Mali|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Indie+Flower');
+
+body {
+    font-family: Ubuntu, 'Lato', sans-serif;
+   }
+
+input {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+text-align:center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align:center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align:center;  
+}
+
+:-ms-input-placeholder {  
+   text-align:center; 
+}
+
+#start {
+    background-color: #98d2d9;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    font-size: 3em;
+    color: #ffffff;
+}
+
+#start:hover {
+    background-color: #df3939;
+}
+
+#understart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+#new {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: #98d2d9;
+    height: 100%; 
+}
+
+.lesson {
+    display: flex;
+    flex-direction:column;
+    color: #b63c42;
+    font-size: 2em;
+    font-family: Ubuntu;
+    color: #ffffff;
+}
+
+.lesson:hover {
+    color: aliceblue;
+}
+
+#testPage {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: #98d2d9;
+    height: 100%; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h5 {
+    color: #ffffff;
+    text-align: center;
+    font-family: Ubuntu;
+}
+
+h4 {
+    color: #ffffff;
+}
+
+#subject {
+    color: #df3939;
+    font-size: 2em;
+    font-style: oblique;
+}
+
+#words {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    color: #df3939;
+    font-size: 2em;
+}
+
+#questWord {
+    font-size: 1.5em;
+    width: auto;
+    border: 3px solid #ffffff;
+    border-radius: 35px;
+    padding-right: 100px;
+    padding-left: 100px;
+    font-family: Ubuntu;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#translate {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+#translateInput {
+    border-radius: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#translateInput:disabled {
+    background-color: #ffffff;
+}
+
+::placeholder {
+    font-size: 20px;
+    color: cadetblue;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultFalse {
+  width: auto;
+  background-color: #df3939;
+  color: #ffffff;
+  margin: 30px;
+  border-radius: 30px;
+  font-size: 1em;
+}
+
+#resultTrue {
+  width: auto;
+  background-color: chartreuse;
+  border-radius: 30px;
+  margin: 30px;
+  color: darkgreen;
+  font-size: 1em;
+  
+}
+
+/*
+#buttonNext {
+    margin: 30px;
+    border-radius: 30%;
+}
+*/
+
+#congrats {
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    height: 100%;
+    background-color: #98d2d9;
+    align-items: center;
+    color: #ffffff;
+    font-size: 3em;
+}
+
+#congratsWords {
+    text-align: center;
+}
+
+#home {
+    color: #ffffff;
+    font-family: Ubuntu, sans-serif;
+    font-size: 0.6em;
+}
+
+#statusbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 10px;
+   
+}
+
+.element {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    height: 10px;
+    background-color: #ffffff;
+}
+
+.curElement {
+    background-color: #df3939;
+}
+
+#count {
+    display: flex;
+    justify-content: center;
+}
+
+#result, #howManyWords {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #df3939;
+}
+
+#trButton {
+    width: auto;
+    border-radius: 20px;
+    font-size: 0,5em;
+    margin: 30px;
+    color: #df3939;
+}
+
+#trButton:hover {
+    background-color: #98d2d9;
+    color: #ffffff;
+}
+
+#learn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #98d2d9;
+    height: 100%; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+    width: 100%;
+}
+
+.wordBlockOrigin {
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Montserrat;
+    font-size: 2em;
+    border-radius: 15px;
+}
+
+.wordBlockTranslate {
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #fffddd;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Montserrat;
+    font-size: 2em;
+    border-radius: 15px; 
+}
+
+#back {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    font-size: 1em;
+    color: #fffddd;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: Montserrat;
+    
+}
+
+#back:hover {
+    font-size: 0.8em;
+    border: 3px solid #fffddd;
+    color: #fffddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
