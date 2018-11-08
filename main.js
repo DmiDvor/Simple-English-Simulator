@@ -187,22 +187,23 @@
 
     // Запуск теста
 
-//    function testYourSelf () {
-//            $('#new').prop('hidden', true);
-//            $('#testPage').prop('hidden', false);
-//            stBarFilling (len);
-//            $('#statusbar').children().removeClass('curElement');
-//            $('#el0').addClass('curElement');
-//            correctAnswer = 0;
-//            elIndex = 0;
-//            // Вывод нового английского слова из массива 
-//            randomWord ();
-//            $('#questWord').html(words[randIndex].origin);
-//            $('#resultTrue').prop('hidden', true);
-//            $('#resultFalse').prop('hidden', true);
-//            $('#translateInput').prop('disabled', false);
-//            $('#translateInput').focus();
-//    }
+   function testYourSelf () {
+           $('#new').prop('hidden', true);
+           $('#testPage').prop('hidden', false);
+           stBarFilling (len);
+           $('#statusbar').children().removeClass('curElement');
+           $('#el0').addClass('curElement');
+           correctAnswer = 0;
+           elIndex = 0;
+           // Вывод нового английского слова из массива 
+           randomWord ();
+           $('#questWord').html(words[randIndex].origin);
+           $('#resultTrue').prop('hidden', true);
+           $('#resultFalse').prop('hidden', true);
+           $('#translateInput').prop('disabled', false);
+           $('#translateInput').focus();
+           $('#trButton').prop('hidden', false);
+   }
   //////////////////////////////////////////////////////////////////////////////     
     
 
@@ -246,30 +247,30 @@
         });
         
         // Выбор урока №1
-        $('#testYourSelf').click(function() {
-//            testYourSelf ();
-            $('#new').prop('hidden', true);
-            $('#testPage').prop('hidden', false);
-            stBarFilling (len);
-            $('#statusbar').children().removeClass('curElement');
-            $('#el0').addClass('curElement');
-            correctAnswer = 0;
-            elIndex = 0;
-            // Вывод нового английского слова из массива 
-            randomWord ();
-            $('#questWord').html(words[randIndex].origin);
-            $('#resultTrue').prop('hidden', true);
-            $('#resultFalse').prop('hidden', true);
-            $('#translateInput').prop('disabled', false);
-            $('#translateInput').focus();
-            $('#trButton').prop('hidden', false);
+        $('#testYourSelf').on('click', function() {
+           testYourSelf ();
+            // $('#new').prop('hidden', true);
+            // $('#testPage').prop('hidden', false);
+            // stBarFilling (len);
+            // $('#statusbar').children().removeClass('curElement');
+            // $('#el0').addClass('curElement');
+            // correctAnswer = 0;
+            // elIndex = 0;
+            // // Вывод нового английского слова из массива 
+            // randomWord ();
+            // $('#questWord').html(words[randIndex].origin);
+            // $('#resultTrue').prop('hidden', true);
+            // $('#resultFalse').prop('hidden', true);
+            // $('#translateInput').prop('disabled', false);
+            // $('#translateInput').focus();
+            // $('#trButton').prop('hidden', false);
         })
  
         // Создание статусбара
         statusBar ();
 
         // Кнопка ПРОВЕРИТЬ
-        $('#trButton').click(function() {
+        $('#trButton').on('click', function() {
             $('#empty').prop('hidden', true);
 
                 if ($('#translateInput').val() === '') {
@@ -297,9 +298,10 @@
         });
            
         // На главную    
-        $('#home').bind('click', function() {
+        $('#home').on('click', function() {
             $('#congrats').prop('hidden', true);
             $('#new').prop('hidden', false);
+            $('#learnWords').prop('hidden', false);
             $('input').val('');
             correctAnswer = 0;
             count = 1;
@@ -316,9 +318,19 @@
             wordBlockFilling();
         })
         
-//        $('#back').click(function() {
-//            $('#learnWords').prop('hidden', true);
-//            testYourSelf ();
-//        })
+       $('#getTest').click(function() {
+            $('#learnWords').prop('hidden', true);
+            testYourSelf ();
+            $('#learn').prop('hidden', true);
+            $('#trButton').prop('hidden', false);
+       })
+
+       $('#backToLearn').click(function() {
+            $('#new').prop('hidden', true);
+            $('#learn').prop('hidden', false);
+            $('#testPage').prop('hidden', true);
+            drawWordBlocks();
+            wordBlockFilling();
+    })
 
    });
