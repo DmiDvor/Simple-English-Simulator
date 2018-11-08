@@ -2,50 +2,50 @@
   
     // Библиотека английских слов с переводами 
     
-    var wordOdject = [];
+    var words = [];
     
-        wordOdject[0] = {
+        words[0] = {
             origin: "to run",
             translate: "бежать"
         }
-        wordOdject[1] = {
+        words[1] = {
             origin: "to go",
             translate: "идти"
         }
-        wordOdject[2] = {
+        words[2] = {
             origin: "to jump",
             translate: "прыгать"
         }
-       wordOdject[3] = {
+       words[3] = {
            origin: "to fly",
            translate: "летать"
        }
-       wordOdject[4] = {
+       words[4] = {
            origin: "to swim",
            translate: "плавать"
        }
-       wordOdject[5] = {
+       words[5] = {
            origin: "to drive",
            translate: "ехать"
        }
-       wordOdject[6] = {
+       words[6] = {
            origin: "to stand",
            translate: "стоять"
        }
-       wordOdject[7] = {
+       words[7] = {
            origin: "to lie",
            translate: "лежать"
        }
-       wordOdject[8] = {
+       words[8] = {
            origin: "to sit",
            translate: "сидеть"
        }
-       wordOdject[9] = {
+       words[9] = {
            origin: "to crawl",
            translate: "ползать"
        }
      
-    var len = wordOdject.length; // Длина массива библиотеки
+    var len = words.length; // Длина массива библиотеки
     
     var randIndex = 1;
     
@@ -68,7 +68,7 @@
     
     // Запись использованных слов в массив
     function addInUsed () {
-        usedWords.push(wordOdject[randIndex].origin);
+        usedWords.push(words[randIndex].origin);
         return;
     }
      
@@ -130,12 +130,12 @@
         if (count !== len) {
             for (var i = 0; i <= usedWords.length; i++) {
 
-                    if (usedWords[i] === wordOdject[randIndex].origin) {
+                    if (usedWords[i] === words[randIndex].origin) {
                         randomWord ();// выбирает случайное слово и выводит на экран
                         return checkRepeat(randIndex);
                     }        
             }
-            $('#questWord').html(wordOdject[randIndex].origin);
+            $('#questWord').html(words[randIndex].origin);
             nextWord();
             count++;
         } else {
@@ -160,7 +160,7 @@
         console.log(count);
         console.log(len);
 		  // Если перевод верный
-		if ($('#translateInput').val() === wordOdject[randIndex].translate) {   
+		if ($('#translateInput').val() === words[randIndex].translate) {   
 		 			$('#resultTrue').prop('hidden', false);
                     $('#resultFalse').prop('hidden', true); 
                     addInUsed ();
@@ -197,7 +197,7 @@
 //            elIndex = 0;
 //            // Вывод нового английского слова из массива 
 //            randomWord ();
-//            $('#questWord').html(wordOdject[randIndex].origin);
+//            $('#questWord').html(words[randIndex].origin);
 //            $('#resultTrue').prop('hidden', true);
 //            $('#resultFalse').prop('hidden', true);
 //            $('#translateInput').prop('disabled', false);
@@ -229,8 +229,8 @@
 
     function wordBlockFilling () {
         for (var i = 0; i < len; i++) {
-            $('#blockOrigin'+i).text(wordOdject[i].origin);
-            $('#blockTranslate'+i).text(wordOdject[i].translate);
+            $('#blockOrigin'+i).text(words[i].origin);
+            $('#blockTranslate'+i).text(words[i].translate);
             
         }
     }
@@ -257,7 +257,7 @@
             elIndex = 0;
             // Вывод нового английского слова из массива 
             randomWord ();
-            $('#questWord').html(wordOdject[randIndex].origin);
+            $('#questWord').html(words[randIndex].origin);
             $('#resultTrue').prop('hidden', true);
             $('#resultFalse').prop('hidden', true);
             $('#translateInput').prop('disabled', false);
@@ -311,6 +311,7 @@
         $('#learnWords').click(function() {
             $('#new').prop('hidden', true);
             $('#learn').prop('hidden', false);
+            $('#testPage').prop('hidden', true);
             drawWordBlocks();
             wordBlockFilling();
         })
