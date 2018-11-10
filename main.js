@@ -323,12 +323,16 @@
             testYourSelf ();
             $('#learn').prop('hidden', true);
             $('#trButton').prop('hidden', false);
+            $('.block').remove();
+            //$('.wordBlockTranslate').remove();
+            
        })
 
        $('#backToLearn').click(function() {
             $('#new').prop('hidden', true);
             $('#learn').prop('hidden', false);
             $('#testPage').prop('hidden', true);
+            $('.block').remove();
             drawWordBlocks();
             wordBlockFilling();
     })

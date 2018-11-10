@@ -236,7 +236,7 @@ h4 {
     justify-content: center;
     align-items: center;
     background-color: #98d2d9;
-    height: auto; 
+    height: 100%; 
     font-family: 'Montserrat', sans-serif;
 }
 
