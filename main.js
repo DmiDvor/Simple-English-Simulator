@@ -82,12 +82,12 @@
             var id = item.slice(3, -2);
             return $(id);
             });
-        return;
     }
     
     // StatusBar
     // Отрисовка элементов статусбара и присвоение им id и class
     function statusBar () {
+        
         for (var j = 0; j < len; j++) {
             $('#statusbar').append("<div class='element'></div>");
             var g = 0;
@@ -100,9 +100,16 @@
     }
     
     // Изменение внешнего вида элементов статусбара
+//    function statusElChange (elIndex) {
+//        console.log(stBar2);
+//        stBar2[elIndex].next().addClass('curElement');
+//        elIndex++;
+//    }
+
     function statusElChange () {
-        stBar2[elIndex].next().addClass('curElement');
-        elIndex++;
+        $('el0').removeClass('curElement');
+        $('el1').addClass('curElement');
+        
     }
     
     // Отсрочка функции
@@ -125,13 +132,15 @@
         return randIndex;  
     }
     
+
+    // Проверяет, не повторяются ли слова
     function checkRepeat () {
        
         if (count !== len) {
             for (var i = 0; i <= usedWords.length; i++) {
 
                     if (usedWords[i] === words[randIndex].origin) {
-                        randomWord ();// выбирает случайное слово и выводит на экран
+                        randomWord ();
                         return checkRepeat(randIndex);
                     }        
             }
@@ -190,9 +199,11 @@
    function testYourSelf () {
            $('#new').prop('hidden', true);
            $('#testPage').prop('hidden', false);
-           stBarFilling (len);
+           stBarFilling ();
            $('#statusbar').children().removeClass('curElement');
            $('#el0').addClass('curElement');
+           // Создание статусбара
+           statusBar ();
            correctAnswer = 0;
            elIndex = 0;
            // Вывод нового английского слова из массива 
@@ -204,9 +215,7 @@
            $('#translateInput').focus();
            $('#trButton').prop('hidden', false);
    }
-  //////////////////////////////////////////////////////////////////////////////     
-    
-
+  
     // Отрисовка блоков со словами и присвоение им id и class 
     function drawWordBlocks () {
         for (var i = 0; i < len; i++) {
@@ -235,39 +244,75 @@
             
         }
     }
+
+
+//    // Очищение inputa
+//    function clearInput () {
+//        
+//    }
+    // Добавление слов
+
+    
+    function addWords () {
+            
+            var newOrigin = $('#newOrigin').val();
+            var newTranslate = $('#newTranslate').val();
+            words.push({
+               origin: newOrigin,
+               translate: newTranslate
+            })
+            len = words.length;
+            $('#newOrigin').val('');
+            $('#newTranslate').val('');
+            
+            console.log(words);
+            console.log(len);
+    }
+
     
   ///////////////////////////////////////////////////////////////////////////////
     $('document').ready(function() {
                     
         // Нажатие на кнопку Start
         $('#start').on('click', function() {
-            $("#start").hide();
             $("#understart").hide();
             $('#new').prop('hidden', false);
         });
         
-        // Выбор урока №1
+        // Кнопка "Пройти тест" на главном экране
         $('#testYourSelf').on('click', function() {
-           testYourSelf ();
-            // $('#new').prop('hidden', true);
-            // $('#testPage').prop('hidden', false);
-            // stBarFilling (len);
-            // $('#statusbar').children().removeClass('curElement');
-            // $('#el0').addClass('curElement');
-            // correctAnswer = 0;
-            // elIndex = 0;
-            // // Вывод нового английского слова из массива 
-            // randomWord ();
-            // $('#questWord').html(words[randIndex].origin);
-            // $('#resultTrue').prop('hidden', true);
-            // $('#resultFalse').prop('hidden', true);
-            // $('#translateInput').prop('disabled', false);
-            // $('#translateInput').focus();
-            // $('#trButton').prop('hidden', false);
+            testYourSelf ();
+            $('#el0').addClass('curElement');
+            
+        })
+        
+        
+        // Кнопка "Словарь" на главном экране
+        $('#learnWords').click(function() {
+            $('#new').prop('hidden', true);
+            $('#learn').prop('hidden', false);
+            $('#testPage').prop('hidden', true);
+            drawWordBlocks();
+            wordBlockFilling();
+        })
+        
+        // Кнопка "Добавить слова" на главном экране
+        
+        $('#addWords').click(function() {
+            $('#new').prop('hidden', true);
+            $('#add').prop('hidden', false);
+            
+//            console.log(newOrigin);
+//            console.log(newTranslate);
+        })
+        
+        // Добавление в словарь
+        
+        $('#addToDict').click(function() {
+            addWords ();
         })
  
-        // Создание статусбара
-        statusBar ();
+        
 
         // Кнопка ПРОВЕРИТЬ
         $('#trButton').on('click', function() {
@@ -310,31 +355,54 @@
 
         });
         
-        $('#learnWords').click(function() {
+        
+        // Кнопка "Пройти тест" на странице словаря   
+        $('#getTest').click(function() {
+            $('#learnWords').prop('hidden', true);
+            testYourSelf ();
+            $('#el0').addClass('curElement');
+            $('#learn').prop('hidden', true);
+            $('#trButton').prop('hidden', false);
+            $('.block').remove();
+
+        })
+        
+        // Кнопка "Добавить слова" на странице словаря
+        
+        $('#toDict').click(function() {
+            $('#learn').prop('hidden', true);
+            $('#new').prop('hidden', true);
+            $('#add').prop('hidden', false);
+            addWords ();
+
+        })
+
+        // Кнопка "Учить слова" на странице теста
+        $('#backToLearn').click(function() {
             $('#new').prop('hidden', true);
             $('#learn').prop('hidden', false);
             $('#testPage').prop('hidden', true);
+            $('.block').remove();
             drawWordBlocks();
             wordBlockFilling();
         })
         
-       $('#getTest').click(function() {
-            $('#learnWords').prop('hidden', true);
-            testYourSelf ();
-            $('#learn').prop('hidden', true);
-            $('#trButton').prop('hidden', false);
-            $('.block').remove();
-            //$('.wordBlockTranslate').remove();
-            
-       })
-
-       $('#backToLearn').click(function() {
+        // Кнопка "Словарь" на странице добавления слов
+        $('#dict').click(function() {
             $('#new').prop('hidden', true);
             $('#learn').prop('hidden', false);
-            $('#testPage').prop('hidden', true);
+            $('#add').prop('hidden', true);
             $('.block').remove();
             drawWordBlocks();
             wordBlockFilling();
-    })
+        })
+        // Кнопка "Пройти тест" на странице добавления слов
+        $('#toTest').click(function() {
+            $('#add').prop('hidden', true);
+            testYourSelf ();
+            $('#testPage').prop('hidden', false);
+            $('#trButton').prop('hidden', false);
+
+        })
 
    });

@@ -13,9 +13,9 @@
     </div>
     
     <div id="new" class='container-fluid' hidden=true>
-        <button type='button' id='learnWords' class='btn btn-link lesson'>Учить слова</button>
+        <button type='button' id='learnWords' class='btn btn-link lesson'>Словарь</button>
         <button type='button' id='testYourSelf' class='btn btn-link lesson'>Пройти тест</button>
-<!--        <button type='button' id='les3' class='btn btn-link lesson'>Lesson 3</button>-->
+        <button type='button' id='addWords' class='btn btn-link lesson'>Добавить слова</button>
     </div>
     
     <div id="congrats" class="container-fluid" hidden=true>
@@ -34,7 +34,20 @@
     </div>
         
     <div id="learn" hidden="true">
-        <div id="getTest">Пройти тест</div>
+        <div id="dictNav">
+        <div id="toDict" class="naviButtons">Добавить слова</div>
+        <div id="getTest" class="naviButtons">Пройти тест</div>
+        </div>
+    </div>
+    
+    <div id="add" hidden="true">
+        <div class='newWord'>
+        <input type="text" id='newOrigin' class='wordBlockOrigin' placeholder="Введи английское слово">
+        <input type="text" id='newTranslate' class='wordBlockTranslate' placeholder="Введи перевод">
+        </div>
+        <button type="submit" id="addToDict" class="naviButtons">Добавить слово</button>
+        <button type="submit" id="dict" class="naviButtons">Словарь</button>
+        <button type="submit" id="toTest" class="naviButtons">Пройти тест</button>
     </div>
     
     <div id="testPage" class="container-fluid" hidden=true>
@@ -53,7 +66,7 @@
             
         </div>
         <div id="statusbar"></div>
-        <div id="backToLearn">Учить слова</div>
+        <div id="backToLearn" class="naviButtons">Учить слова</div>
         
     </div>
     

@@ -66,7 +66,7 @@ text-align:center;
 }
 
 .lesson:hover {
-    color: aliceblue;
+    color: #ffffff;
 }
 
 #testPage {
@@ -254,72 +254,94 @@ h4 {
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
+    color: #b63c42;
     width: auto;
     height: auto;
     margin: 5px;
     padding-left: 10px;
     padding-right: 10px;
     font-family: Montserrat;
-    font-size: 2em;
+    font-size: 1.5em;
     border-radius: 15px;
+    box-sizing: content-box;
 }
 
 .wordBlockTranslate {
     
     justify-content: center;
     align-items: center;
-    background-color: #fffddd;
+    background-color: #ffffff;
+    color: #98d2d9;
     width: auto;
     height: auto;
     margin: 5px;
     padding-left: 15px;
     padding-right: 15px;
     font-family: Montserrat;
-    font-size: 2em;
-    border-radius: 15px; 
-}
-
-#getTest {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    font-size: 1em;
-    color: #fffddd;
+    font-size: 1.5em;
     border-radius: 15px;
-    padding-right: 15px;
-    padding-left: 15px;
-    font-family: Montserrat;
-    border: 1px solid #fffddd;
     
 }
 
-#getTest:hover {
-    color:  #98d2d9;
-    background-color:  #fffddd;
-}
-
-#backToLearn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.naviButtons {
     width: auto;
     height: auto;
     font-size: 1em;
-    color: #fffddd;
+    color: #ffffff;
+    background-color: #98d2d9;
+    border-radius: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 5px;
+    border: 1px solid #ffffff;
+    
+}
+
+.naviButtons:hover {
+    color:  #98d2d9;
+    background-color:  #ffffff;
+}
+
+#add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #98d2d9;
+    width: 100%;
+    height: 100%; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.newWord {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    
+}
+
+.addButtons {
+    width: auto;
+    height: auto;
+    font-size: 1em;
+    color: #df3939;
     border-radius: 15px;
     padding-right: 15px;
     padding-left: 15px;
     font-family: Montserrat;
-    border: 1px solid #fffddd;
+    border: 1px solid #ffffff;
     margin-top: 15px;
 }
 
-#backToLearn:hover {
-    color:  #98d2d9;
-    background-color:  #ffffff;
+#dictNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
+
+
+
+
 
 
 
