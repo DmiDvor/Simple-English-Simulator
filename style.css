@@ -138,22 +138,21 @@ h4 {
     align-items: center;
 }
 
+.result {
+    width: auto;
+    margin: 15px;
+    border-radius: 30px;
+    font-size: 0.8em;
+}
+
 #resultFalse {
-  width: auto;
-  background-color: #df3939;
-  color: #ffffff;
-  margin: 15px;
-  border-radius: 30px;
-  font-size: 1em;
+    background-color: #df3939;
+    color: #ffffff;
 }
 
 #resultTrue {
-  width: auto;
-  background-color: chartreuse;
-  border-radius: 30px;
-  margin: 15px;
-  color: darkgreen;
-  font-size: 1em;
+    background-color: chartreuse;
+    color: darkgreen;
   
 }
 
@@ -216,8 +215,8 @@ h4 {
 
 #trButton {
     width: auto;
-    border-radius: 20px;
-    font-size: 0,5em;
+    border-radius: 30px;
+    font-size: 0.5em;
     margin: 15px;
     color: #df3939;
 }
