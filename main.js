@@ -45,7 +45,7 @@
            translate: "ползать"
        }
      
-    var len = words.length; // Длина массива библиотеки
+    var len = words.length; // Длина массива со словами
     
     var randIndex = 1;
     
