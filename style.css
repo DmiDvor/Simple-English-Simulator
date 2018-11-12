@@ -37,6 +37,7 @@ text-align:center;
 
 #start:hover {
     background-color: #df3939;
+    color: #fffddd;
 }
 
 #understart {
@@ -255,8 +256,8 @@ h4 {
     width: auto;
     height: auto;
     margin: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     font-family: Montserrat;
     font-size: 1.5em;
     border-radius: 15px;
@@ -278,47 +279,14 @@ h4 {
     border-radius: 15px; 
 }
 
-/* #getTest {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    font-size: 1em;
-    color: #fffddd;
-    border-radius: 15px;
-    padding-right: 15px;
-    padding-left: 15px;
-    font-family: Montserrat;
-    border: 1px solid #fffddd;
-    
+.wordBlockOrigin:hover{
+    background-color: #98d2d9;
 }
 
-#getTest:hover {
-    color:  #98d2d9;
-    background-color:  #fffddd;
+.wordBlockTranslate:hover{
+    background-color: #98d2d9;
+    color: #ffffff;
 }
-
-#backToLearn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    font-size: 1em;
-    color: #fffddd;
-    border-radius: 15px;
-    padding-right: 15px;
-    padding-left: 15px;
-    font-family: Montserrat;
-    border: 1px solid #fffddd;
-    margin-top: 15px;
-} */
-/* 
-#backToLearn:hover {
-    color:  #98d2d9;
-    background-color:  #ffffff;
-} */
 
 .naviButtons {
     width: auto;
