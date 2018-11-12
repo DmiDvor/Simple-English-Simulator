@@ -165,24 +165,25 @@ h4 {
     background-color: #98d2d9;
     align-items: center;
     color: #ffffff;
-    font-size: 3em;
+    
 }
 
 #congratsWords {
     text-align: center;
+    font-size: 3em;
 }
 
-#home {
+/* #home {
     color: #ffffff;
     font-family: Ubuntu, sans-serif;
     font-size: 0.6em;
-}
+} */
 
 #statusbar {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    height: 10px;
+    height: auto;
     margin: 5px;
    
 }
@@ -205,6 +206,7 @@ h4 {
 #count {
     display: flex;
     justify-content: center;
+    font-size: 2.5em;
 }
 
 #result, #howManyWords {
@@ -241,7 +243,6 @@ h4 {
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    margin: 5px;
     width: 100%;
 }
 
@@ -277,7 +278,7 @@ h4 {
     border-radius: 15px; 
 }
 
-#getTest {
+/* #getTest {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -312,9 +313,28 @@ h4 {
     font-family: Montserrat;
     border: 1px solid #fffddd;
     margin-top: 15px;
+} */
+/* 
+#backToLearn:hover {
+    color:  #98d2d9;
+    background-color:  #ffffff;
+} */
+
+.naviButtons {
+    width: auto;
+    height: auto;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #98d2d9;
+    border-radius: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 15px;
+    border: 1px solid #ffffff;
+    
 }
 
-#backToLearn:hover {
+.naviButtons:hover {
     color:  #98d2d9;
     background-color:  #ffffff;
 }
