@@ -142,7 +142,7 @@ h4 {
   width: auto;
   background-color: #df3939;
   color: #ffffff;
-  margin: 30px;
+  margin: 15px;
   border-radius: 30px;
   font-size: 1em;
 }
@@ -151,18 +151,12 @@ h4 {
   width: auto;
   background-color: chartreuse;
   border-radius: 30px;
-  margin: 30px;
+  margin: 15px;
   color: darkgreen;
   font-size: 1em;
   
 }
 
-/*
-#buttonNext {
-    margin: 30px;
-    border-radius: 30%;
-}
-*/
 
 #congrats {
     display: flex;
@@ -197,13 +191,16 @@ h4 {
 .element {
     display: flex;
     justify-content: center;
-    width: 25px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 3px;
     background-color: #ffffff;
 }
 
 .curElement {
     background-color: #df3939;
+    
 }
 
 #count {
@@ -254,6 +251,7 @@ h4 {
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
+    color: #b63c42;
     width: auto;
     height: auto;
     margin: 5px;
@@ -268,7 +266,8 @@ h4 {
     
     justify-content: center;
     align-items: center;
-    background-color: #fffddd;
+    background-color: #ffffff;
+    color: #98d2d9;
     width: auto;
     height: auto;
     margin: 5px;
