@@ -2,56 +2,100 @@
   
     // Библиотека английских слов с переводами 
     
-    var words = [];
+    var wordsVerbs = [];
     
-        words[0] = {
+        wordsVerbs[0] = {
             origin: "to run",
             translate: "бежать"
         }
-        words[1] = {
+        wordsVerbs[1] = {
             origin: "to go",
             translate: "идти"
         }
-        words[2] = {
+        wordsVerbs[2] = {
             origin: "to jump",
             translate: "прыгать"
         }
-       words[3] = {
+       wordsVerbs[3] = {
            origin: "to fly",
            translate: "летать"
        }
-       words[4] = {
+       wordsVerbs[4] = {
            origin: "to swim",
            translate: "плавать"
        }
-       words[5] = {
+       wordsVerbs[5] = {
            origin: "to drive",
            translate: "ехать"
        }
-       words[6] = {
+       wordsVerbs[6] = {
            origin: "to stand",
            translate: "стоять"
        }
-       words[7] = {
+       wordsVerbs[7] = {
            origin: "to lie",
            translate: "лежать"
        }
-       words[8] = {
+       wordsVerbs[8] = {
            origin: "to sit",
            translate: "сидеть"
        }
-       words[9] = {
+       wordsVerbs[9] = {
            origin: "to crawl",
            translate: "ползать"
        }
+
+       var wordsNouns = [];
+    
+       wordsNouns[0] = {
+           origin: "an apple",
+           translate: "яблоко"
+       }
+       wordsNouns[1] = {
+           origin: "a house",
+           translate: "дом"
+       }
+       wordsNouns[2] = {
+           origin: "a car",
+           translate: "машина"
+       }
+       wordsNouns[3] = {
+          origin: "a tree",
+          translate: "дерево"
+      }
+      wordsNouns[4] = {
+          origin: "a window",
+          translate: "окно"
+      }
+      wordsNouns[5] = {
+          origin: "a table",
+          translate: "стол"
+      }
+      wordsNouns[6] = {
+          origin: "a pen",
+          translate: "ручка"
+      }
+      wordsNouns[7] = {
+          origin: "a dog",
+          translate: "собака"
+      }
+      wordsNouns[8] = {
+          origin: "a cat",
+          translate: "кошка"
+      }
+      wordsNouns[9] = {
+          origin: "a book",
+          translate: "книга"
+      }
+       
      
-    var len = words.length; // Длина массива со словами
+    var len = wordsVerbs.length; // Длина массива со словами
     
     var randIndex = 1;
     
     var count = 1; // Счетчик переведённых слов
     
-    var usedWords = []; 
+    var usedwords = []; 
     
     var timerID;
     
@@ -67,8 +111,8 @@
     
     
     // Запись использованных слов в массив
-    function addInUsed () {
-        usedWords.push(words[randIndex].origin);
+    function addInUsed (arr) {
+        usedwords.push(arr[randIndex].origin);
         return;
     }
      
@@ -128,14 +172,14 @@
     function checkRepeat () {
        
         if (count !== len) {
-            for (var i = 0; i <= usedWords.length; i++) {
+            for (var i = 0; i <= usedwords.length; i++) {
 
-                    if (usedWords[i] === words[randIndex].origin) {
+                    if (usedwords[i] === wordsVerbs[randIndex].origin) {
                         randomWord ();// выбирает случайное слово и выводит на экран
                         return checkRepeat(randIndex);
                     }        
             }
-            $('#questWord').html(words[randIndex].origin);
+            $('#questWord').html(wordsVerbs[randIndex].origin);
             nextWord();
             count++;
         } else {
@@ -158,22 +202,20 @@
     // Проверка ответа
     function check () {
 		  // Если перевод верный
-		if ($('#translateInput').val() === words[randIndex].translate) {   
+		if ($('#translateInput').val() === wordsVerbs[randIndex].translate) {   
             $('#resultTrue').prop('hidden', false);
             $('#resultFalse').prop('hidden', true); 
-            addInUsed ();
+            addInUsed (wordsVerbs);
             correctAnswer++;
             delayedFunc(checkRepeat); // задержка вывода следующего слова
-            console.log("Верных ответов - " + correctAnswer); 
             delayedFunc(statusElChange);  
                     
 
         } else {    // Если перевод не верный
-            addInUsed ();
+            addInUsed (wordsVerbs);
             $('#resultFalse').prop('hidden', false);
             $('#trButton').prop('hidden', false);
             delayedFunc(checkRepeat);
-            console.log("Верных ответов - " + correctAnswer);
             delayedFunc(statusElChange);
             $('#empty').prop('hidden', true);
             $('#translateInput').val('');
@@ -195,7 +237,7 @@
            elIndex = 0;
            // Вывод нового английского слова из массива 
            randomWord ();
-           $('#questWord').html(words[randIndex].origin);
+           $('#questWord').html(wordsVerbs[randIndex].origin);
            $('#resultTrue').prop('hidden', true);
            $('#resultFalse').prop('hidden', true);
            $('#translateInput').prop('disabled', false);
@@ -228,8 +270,8 @@
 
     function wordBlockFilling () {
         for (var i = 0; i < len; i++) {
-            $('#blockOrigin'+i).text(words[i].origin);
-            $('#blockTranslate'+i).text(words[i].translate);
+            $('#blockOrigin'+i).text(wordsVerbs[i].origin);
+            $('#blockTranslate'+i).text(wordsVerbs[i].translate);
             
         }
     }
@@ -244,7 +286,7 @@
             $('#new').prop('hidden', false);
         });
         
-        // Выбор урока №1
+        // Выбрать прохождение теста
         $('#testYourSelf').on('click', function() {
            testYourSelf ();
         })
@@ -288,7 +330,7 @@
             $('input').val('');
             correctAnswer = 0;
             count = 1;
-            usedWords = [];
+            usedwords = [];
             randIndex = 1;
 
         });
@@ -307,7 +349,6 @@
             $('#learn').prop('hidden', true);
             $('#trButton').prop('hidden', false);
             $('.block').remove();
-            //$('.wordBlockTranslate').remove();
             
        })
 
