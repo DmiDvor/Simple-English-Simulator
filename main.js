@@ -157,28 +157,26 @@
     
     // Проверка ответа
     function check () {
-        console.log(count);
-        console.log(len);
 		  // Если перевод верный
 		if ($('#translateInput').val() === words[randIndex].translate) {   
-		 			$('#resultTrue').prop('hidden', false);
-                    $('#resultFalse').prop('hidden', true); 
-                    addInUsed ();
-                    correctAnswer++;
-                    delayedFunc(checkRepeat); // задержка вывода следующего слова
-                    console.log("Верных ответов - " + correctAnswer); 
-                    delayedFunc(statusElChange);  
+            $('#resultTrue').prop('hidden', false);
+            $('#resultFalse').prop('hidden', true); 
+            addInUsed ();
+            correctAnswer++;
+            delayedFunc(checkRepeat); // задержка вывода следующего слова
+            console.log("Верных ответов - " + correctAnswer); 
+            delayedFunc(statusElChange);  
                     
 
         } else {    // Если перевод не верный
-                    addInUsed ();
-                    $('#resultFalse').prop('hidden', false);
-                    $('#trButton').prop('hidden', false);
-                    delayedFunc(checkRepeat);
-                    console.log("Верных ответов - " + correctAnswer);
-                    delayedFunc(statusElChange);
-                    $('#empty').prop('hidden', true);
-                    $('#translateInput').val('');
+            addInUsed ();
+            $('#resultFalse').prop('hidden', false);
+            $('#trButton').prop('hidden', false);
+            delayedFunc(checkRepeat);
+            console.log("Верных ответов - " + correctAnswer);
+            delayedFunc(statusElChange);
+            $('#empty').prop('hidden', true);
+            $('#translateInput').val('');
                     
 
             }
@@ -249,21 +247,6 @@
         // Выбор урока №1
         $('#testYourSelf').on('click', function() {
            testYourSelf ();
-            // $('#new').prop('hidden', true);
-            // $('#testPage').prop('hidden', false);
-            // stBarFilling (len);
-            // $('#statusbar').children().removeClass('curElement');
-            // $('#el0').addClass('curElement');
-            // correctAnswer = 0;
-            // elIndex = 0;
-            // // Вывод нового английского слова из массива 
-            // randomWord ();
-            // $('#questWord').html(words[randIndex].origin);
-            // $('#resultTrue').prop('hidden', true);
-            // $('#resultFalse').prop('hidden', true);
-            // $('#translateInput').prop('disabled', false);
-            // $('#translateInput').focus();
-            // $('#trButton').prop('hidden', false);
         })
  
         // Создание статусбара
