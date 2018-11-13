@@ -1,6 +1,6 @@
 
   
-    // Библиотека английских слов с переводами 
+    // Массив английских слов с переводами 
     
     var words = [];
     
@@ -164,7 +164,6 @@
             addInUsed ();
             correctAnswer++;
             delayedFunc(checkRepeat); // задержка вывода следующего слова
-            console.log("Верных ответов - " + correctAnswer); 
             delayedFunc(statusElChange);  
                     
 
@@ -173,7 +172,6 @@
             $('#resultFalse').prop('hidden', false);
             $('#trButton').prop('hidden', false);
             delayedFunc(checkRepeat);
-            console.log("Верных ответов - " + correctAnswer);
             delayedFunc(statusElChange);
             $('#empty').prop('hidden', true);
             $('#translateInput').val('');
